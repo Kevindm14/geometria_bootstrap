@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<title>Contactenos</title>
+</head>
+
+<body>
+	<img src="../img/encabezado_contacto.png" class="imag2">
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light shadow-sm p-1" style="background-color: #00796b;">
+		<div class="container">
+			<a class="navbar-brand text-white" href="#">Geometria</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav align-items-center">
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="inicio.html">Inicio</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="historia.html">Historia</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="axiomas.html">Axiomas</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="tiposDeGeometria.html">Tipos de geometria</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="catalogo.html">Catalogo</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="contacto.html">Contactenos</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="factura.html">Factura</a>
+					</li>
+					<li class="nav-item m-2">
+						<a class="nav-link text-white" href="chat.html">Servicio en linea</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div class="form-principal">
+		<form id="form_contactenos">
+			<h3>Contactanos</h3>
+			<input type="text" placeholder="Nombres" id="nombre">
+			<input type="text" placeholder="CC" id="cedula">
+			<input type="email" placeholder="correo@example.com" id="correo">
+			<input type="tel" placeholder="Telefono de celular" id="telefono">
+			<label>Masculino</label>
+			<input type="radio" name="gen" value="men">
+			<label>Femenino</label>
+			<input type="radio" name="gen" value="women">
+			<input type="date" placeholder="Fecha" id="fecha">
+			<input class="edad" type="number" placeholder="Edad" id="edad">
+			<textarea></textarea>
+			<input type="submit">
+			<input type="reset">
+		</form>
+	</div>
+
+	<div>
+		<center>
+			<table class="table_usuarios" id="tabla_contactos">
+				<button class="btn_mostrar" id="mostrar">Mostrar</button>
+				<thead>
+					<th>Nombre</th>
+					<th>cc</th>
+					<th>Correo</th>
+					<th>Telefono</th>
+					<th>Fecha</th>
+					<th>Edad</th>
+				</thead>
+				<tbody>
+
+				</tbody>
+			</table>
+			<h4 id="mensaje"></h4>
+		</center>
+	</div>
+
+	<div class="ubicacion">
+		<center>
+			<h2>Ubicacion de nuestra compañia</h2>
+		</center>
+		<iframe class="iframe-map"
+			src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12619.56689416119!2d-122.43607875104206!3d37.74568433787254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1san%20Francisco%2C%20CA%20945354!5e0!3m2!1ses-419!2sco!4v1592448672200!5m2!1ses-419!2sco"
+			width="500" height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+			tabindex="0">
+		</iframe>
+	</div>
+
+	<footer class="container-fluid p-5 text-center bg-dark font-weight-bold text-white">
+		<div>
+			Contactanos: Telefono 301546798 <br>
+			Email: math@gmail.com <br>
+			Direccion: 500 Enrique Cegoviano, San Francisco, CA 945354 <br>
+			&copy; 2020 Por Geometria-web
+		</div>
+	</footer>
+	<script src="../JS/contactenos.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
