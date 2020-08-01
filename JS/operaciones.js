@@ -22,6 +22,7 @@ const divRombo = `
     <input type='text' id='dMayor' placeholder='Diagonal Mayor' class='form-control my-3'>
     <input type='text' id='dMenor' placeholder='Diagonal Menor' class='form-control my-3'>
 `
+const mostrar = document.getElementById("mostrar");
 
 const areas = []
 
@@ -46,7 +47,7 @@ figuras.addEventListener("change", (e) => {
 
                 areas.splice(0, 0, figura)
                 localStorage.setItem('figuras', JSON.stringify(areas))
-
+                mostrar.disabled = false;
             })
             
         break;
@@ -71,7 +72,7 @@ figuras.addEventListener("change", (e) => {
 
                 areas.splice(0, 0, figura)
                 localStorage.setItem('figuras', JSON.stringify(areas))    
-                
+                mostrar.disabled = false;
             })
             
         break;
@@ -96,7 +97,7 @@ figuras.addEventListener("change", (e) => {
 
                 areas.splice(0, 0, figura)
                 localStorage.setItem('figuras', JSON.stringify(areas))
-
+                mostrar.disabled = false;
             })
             
         break;
@@ -119,7 +120,7 @@ figuras.addEventListener("change", (e) => {
                 areas.splice(0, 0, figura)
                 localStorage.setItem('figuras', JSON.stringify(areas))    
                 sumit.disabled = true
-
+                mostrar.disabled = false;
             })
             
         break;
@@ -135,8 +136,6 @@ function delRow(current) {
     areas.splice(row-1, 1);
     localStorage.setItem('figuras', JSON.stringify(areas))
 }
-
-const mostrar = document.getElementById("mostrar");
 
 mostrar.addEventListener('click', () => {
     const listFiguras = JSON.parse(localStorage.getItem('figuras')),
@@ -158,4 +157,5 @@ mostrar.addEventListener('click', () => {
             buton.innerHTML = '<button id="btn" onclick="delRow(this)" class="btn btn-sm btn-danger">Borrar</button>'
         })
     }
+    mostrar.disabled = true
 })
