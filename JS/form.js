@@ -32,7 +32,7 @@ form.addEventListener("submit", (event) => {
     usuarios.map(e => {
         if (usuario.email == e.email &&  usuario.password == e.password) {
             localStorage.setItem('login', e.nombre)
-            danger.innerHTML = "Iniciaste sesion dale continuar!"
+            location.href = "html/inicio.html"
         }
     });
 })

@@ -22,29 +22,36 @@ form.addEventListener("submit", (event) => {
         edad: edad.value,
     }
     
-    users.push(newUser);
+    users.splice(0, 0, newUser);
     localStorage.setItem('tabla', JSON.stringify(users))
     mostrar.disabled = false 
 })
+
+function delRow(current) {
+    const row = current.parentNode.parentNode.rowIndex;
+    document.getElementById("tabla_contactos").deleteRow(row);
+    users.splice(row-1, 1);
+    localStorage.setItem('tabla', JSON.stringify(users))
+}
 
 mostrar.addEventListener('click', () => {
     const listUser = JSON.parse(localStorage.getItem('tabla')),
         tbody = document.querySelector('#tabla_contactos tbody')
     
+    const listUser2 = listUser.reverse()
+    
     if (listUser == null) {
         mensaje.innerHTML = "No hay usuarios para mostrar"
-        setTimeout(() => {
-            mensaje.style.display = "none"
-        }, 5000);
     } else {
-        listUser.map(element => {
+        listUser2.map(element => {
             let fila = tbody.insertRow(0),
                 nombre = fila.insertCell(0),
                 cedula = fila.insertCell(1),
                 correo = fila.insertCell(2),
                 telefono = fila.insertCell(3),
                 fecha = fila.insertCell(4),
-                edad = fila.insertCell(5)
+                edad = fila.insertCell(5),
+                buton = fila.insertCell(6);
 
             nombre.innerHTML = element.nombre;
             cedula.innerHTML = element.cedula;
@@ -52,6 +59,7 @@ mostrar.addEventListener('click', () => {
             telefono.innerHTML = element.telefono;
             fecha.innerHTML = element.fecha;
             edad.innerHTML = element.edad;
+            buton.innerHTML = '<button id="btn" onclick="delRow(this)" class="btn btn-sm btn-danger"> Delete</button>'
         })
             
         mostrar.disabled = true

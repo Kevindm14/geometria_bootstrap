@@ -1,5 +1,5 @@
 const nombre = localStorage.getItem('login'),
-    encabezado = document.getElementById("nombreusuario");
+    encabezado = document.getElementById("msj");
 
 
 if (nombre == null) {
